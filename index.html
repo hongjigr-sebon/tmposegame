@@ -12,10 +12,10 @@
       <button type="button" id="stopBtn" onclick="stop()" disabled>Stop</button>
     </div>
     <div class="canvas-container">
-      <canvas id="canvas"></canvas>
-      <div id="max-prediction"></div>
+      <canvas id="canvas" width="400" height="400"></canvas>
+      <div id="label-container"></div>
+      <div id="max-prediction">준비 중...</div>
     </div>
-    <div id="label-container"></div>
 
     <!-- Teachable Machine 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>

@@ -1,30 +1,50 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Teachable Machine Pose Model</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <h1>Teachable Machine Pose Model</h1>
-    <div class="button-container">
-      <button type="button" id="startBtn" onclick="init()">Start</button>
-      <button type="button" id="stopBtn" onclick="stop()" disabled>Stop</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Teachable Machine Pose Model</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div id="main-menu" class="menu-container">
+    <h1>Teachable Machine Pose Game</h1>
+    <p>게임을 선택하세요</p>
+    <div class="button-group">
+      <button type="button" onclick="selectGame('money')">💰 돈을 잡아라!</button>
+      <button type="button" onclick="selectGame('new')">🌵 선인장 질주</button>
     </div>
-    <div class="canvas-container">
+  </div>
+
+  <div id="game-container" class="hidden">
+    <div class="header">
+      <button type="button" id="backBtn" onclick="goToMenu()">⬅ 메뉴로</button>
+      <h2 id="game-title">Game Title</h2>
+    </div>
+
+    <div class="button-container">
+      <button type="button" id="startBtn" onclick="startGame()">Start Game</button>
+      <button type="button" id="stopBtn" onclick="stopGame()" disabled>Stop</button>
+    </div>
+
+    <div class="canvas-wrapper">
       <canvas id="canvas" width="400" height="400"></canvas>
       <div id="label-container"></div>
       <div id="max-prediction">준비 중...</div>
     </div>
+  </div>
 
-    <!-- Teachable Machine 라이브러리 -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+  <!-- Teachable Machine 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
 
-    <!-- 애플리케이션 모듈 -->
-    <script src="./js/stabilizer.js"></script>
-    <script src="./js/poseEngine.js"></script>
-    <script src="./js/gameEngine.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+  <!-- 애플리케이션 모듈 -->
+  <script src="./js/stabilizer.js"></script>
+  <script src="./js/poseEngine.js"></script>
+  <script src="./js/gameEngine.js"></script>
+  <script src="./js/cactusGame.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>

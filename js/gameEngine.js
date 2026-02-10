@@ -3,7 +3,7 @@
  * Catch the Money (돈을 잡아라!) 게임 로직 구현
  */
 
-class GameEngine {
+class MoneyGame {
     constructor() {
         this.score = 0;
         this.level = 1;
@@ -367,4 +367,5 @@ class GameEngine {
 }
 
 // 전역 내보내기
-window.GameEngine = GameEngine;
+// 전역 내보내기
+window.MoneyGame = MoneyGame;
